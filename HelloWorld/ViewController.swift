@@ -9,21 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var TitleTextField: UITextField!
+
+    @IBOutlet weak var TitleTextField: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet var mainview: UIView!
+    @IBOutlet weak var changeTextPress: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         TitleTextField.textColor = UIColor.black
     }
-    
+
     var incramenter: integer_t = 0
-    
+
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func changeTextButton(_ sender: UIButton)
+    {
+        TitleTextField.text = textField.text
     }
 
     @IBAction func onPressButton(_ sender: UIButton)
@@ -42,7 +49,8 @@ class ViewController: UIViewController {
             TitleTextField.textColor = UIColor.black
         }
     }
-    
+
+
     @IBAction func backgroundButton(_ sender: UIButton)
     {
         incramenter += 1
@@ -59,5 +67,7 @@ class ViewController: UIViewController {
             mainview.backgroundColor = UIColor.magenta
         }
     }
+
 }
+
 
